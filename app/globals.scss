@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+//fonts
+.font-playfair{
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+}
+.font-raleway{
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+}
+.font-nunito{
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+}
+
+button{
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.btn-primary{
+    background-color: #0d6efd;
+    color: #ffffff !important;
+}
+.btn-secondary{
+    background-color: #6c757d;
+    color: #fff;
+}
+.btn-danger{
+    background-color: #dc3545;
+    color:#fff;
+}
+.btn-success{
+    background-color: #198754;
+    color: #fff;
+}
+.btn-warning{
+    background-color: #ffc107;
+    color: #fff;
+}
+.btn-info{
+    background-color: #0dcaf0;
+    color: #0a0a0a;
+}
+
+
+//RP branding
+.bg-accent-rp{
+  background-color: #0A352D;
+}
+.bg-secondary-rp{
+  background-color: #B18343;
+}
+.bg-primary-rp{
+  background-color: #EAE1D4;
+}
+
+//Vespera branding
+.bg-accent-vespera{
+  background-color: #204499;
+}
+.bg-secondary-vespera{
+  background-color: #9DAED0;
+}
+.bg-primary-vespera{
+  background-color: #FBFBFB;
+}
+//page container
+.page{
+  width: 100%;
+  height: 100dvh;
+}
+
+.flex-row-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-start{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+.flex-space-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-right{
+  align-items: flex-end !important;
+}
+.flex-left{
+  align-items: flex-start !important;
+}
