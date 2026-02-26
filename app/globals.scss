@@ -39,6 +39,7 @@ body {
     font-style: normal;
 }
 
+//button
 button{
   padding: 10px 25px;
   border-radius: 10px;
@@ -68,6 +69,26 @@ button{
 .btn-info{
     background-color: #0dcaf0;
     color: #0a0a0a;
+}
+
+.p-toast-message-content{
+  background-color: #0dcaf0de;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  align-items: center !important;
+  border-left: 3px solid #00303a;
+  gap: 15px;
+  button{
+    padding: 5px !important;
+    border-radius: 50px;
+  }
+}
+.p-toast-icon-close{
+  p-link{
+    padding: unset !important;
+  }
+  
 }
 
 

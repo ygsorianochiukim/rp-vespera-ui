@@ -12,7 +12,7 @@ export default function Home() {
       severity: 'success',
       summary: 'Success',
       detail: 'Toast is working!',
-      life: 3000,
+      life: 30000,
     });
   };
 
