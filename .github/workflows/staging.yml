@@ -1,0 +1,33 @@
+name: Deploy Frontend Staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/frontend-staging
+
+            echo "Pulling latest code..."
+            git pull origin staging
+
+            echo "Installing dependencies..."
+            npm install
+
+            echo "Building Next.js app..."
+            npm run build
+
+            echo "Restarting PM2..."
+            pm2 restart frontend-staging || pm2 start npm --name "frontend-staging" -- start

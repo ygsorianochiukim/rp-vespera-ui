@@ -1,0 +1,33 @@
+name: Deploy Frontend Production
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/frontend-production
+
+            echo "Pulling latest code..."
+            git pull origin master
+
+            echo "Installing dependencies..."
+            npm install
+
+            echo "Building Next.js app..."
+            npm run build
+
+            echo "Restarting PM2..."
+            pm2 restart frontend-production || pm2 start npm --name "frontend-production" -- start
