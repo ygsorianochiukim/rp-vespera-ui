@@ -23,7 +23,7 @@ export default function Home() {
       <div className="page bg-red-400 flex-start">
         <main className='w-full flex-space-between'>
           <header className="text-xl font-bold">
-            Welcome to Renaisance Park / Vespera Project
+            Welcome to Renaisance Park / Vespera Project hahaha,dmfgvbhfgbasljfgsahahaha
           </header>
 
           <div className="flex-col-center w-full border flex-right">
